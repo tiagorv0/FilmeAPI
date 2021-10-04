@@ -19,10 +19,10 @@ namespace FilmesAPI.Controllers
     {
         //private static List<Filme> filmes = new List<Filme>(); // nao precisa mais devido ao banco de dados
         //private static int id = 1; // nao precisa mais devido ao banco de dados
-        private FilmeContext _context;
+        private AppDbContext _context;
         private IMapper _mapper;
 
-        public FilmeController(FilmeContext context, IMapper mapper)
+        public FilmeController(AppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

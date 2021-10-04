@@ -15,4 +15,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Dtos\Cinema\" />
+    <Folder Include="Data\Dtos\Endereco\" />
+  </ItemGroup>
+
 </Project>
