@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FilmesAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class EnderecoController : ControllerBase
     {
