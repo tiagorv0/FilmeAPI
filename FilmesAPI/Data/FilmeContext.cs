@@ -1,4 +1,5 @@
-﻿using FilmesAPI.Controllers.Models;
+﻿using FilmesAPI.Models;
+using FilmesAPI.Data.Dtos;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

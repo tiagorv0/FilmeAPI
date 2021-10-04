@@ -1,10 +1,12 @@
-﻿using FilmesAPI.Controllers.Models;
+﻿using FilmesAPI.Models;
 using FilmesAPI.Data;
+using FilmesAPI.Data.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 
 
 //instalar para o banco de dados: Microsoft.EntityFrameworkCore / Microsoft.EntityFrameworkCore.Tools / MySql.Data.EntityFrameworkCore
@@ -18,15 +20,24 @@ namespace FilmesAPI.Controllers
         //private static List<Filme> filmes = new List<Filme>(); // nao precisa mais devido ao banco de dados
         //private static int id = 1; // nao precisa mais devido ao banco de dados
         private FilmeContext _context;
+        private IMapper _mapper;
 
-        public FilmeController(FilmeContext context)
+        public FilmeController(FilmeContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpPost] //pega os dados 
-        public IActionResult AdicionaFilme([FromBody] Filme filme)
+        public IActionResult AdicionaFilme([FromBody] CreateFilmeDto filmeDto)
         {
+            /*Filme filme = new Filme
+            {
+                Titulo = filmeDto.Titulo,
+                Genero = filmeDto.Genero,
+                Diretor = filmeDto.Diretor,
+                Duracao = filmeDto.Duracao
+            };*/ Filme filme = _mapper.Map<Filme>(filmeDto);
             //filme.Id = id++;
             //filmes.Add(filme);
             _context.Filmes.Add(filme);
@@ -47,13 +58,22 @@ namespace FilmesAPI.Controllers
             Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
             if(filme != null)
             {
-                return Ok(filme);
+                /*ReadFilmeDto filmeDto = new ReadFilmeDto
+                {
+                    Titulo = filme.Titulo,
+                    Diretor = filme.Diretor,
+                    Duracao = filme.Duracao,
+                    Id = filme.Id,
+                    Genero = filme.Genero,
+                    HoraDaConsulta = DateTime.Now
+                };*/ ReadFilmeDto filmeDto = _mapper.Map<ReadFilmeDto>(filme);
+                return Ok(filmeDto);
             }
             return NotFound();
         }
 
         [HttpPut("{id}")] //atualiza 
-        public IActionResult AtualizaFilme(int id, [FromBody] Filme filmeNovo)
+        public IActionResult AtualizaFilme(int id, [FromBody] UpdateFilmeDto filmeDto)
         {
             Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
             if(filme == null)
@@ -61,10 +81,10 @@ namespace FilmesAPI.Controllers
                 return NotFound();
 
             }
-            filme.Titulo = filmeNovo.Titulo;
-            filme.Genero = filmeNovo.Genero;
-            filme.Diretor = filmeNovo.Diretor;
-            filme.Duracao = filmeNovo.Duracao;
+            /*filme.Titulo = filmeDto.Titulo;
+            filme.Genero = filmeDto.Genero;
+            filme.Diretor = filmeDto.Diretor;
+            filme.Duracao = filmeDto.Duracao;*/ _mapper.Map(filmeDto, filme);
             _context.SaveChanges();
             return NoContent();
         }

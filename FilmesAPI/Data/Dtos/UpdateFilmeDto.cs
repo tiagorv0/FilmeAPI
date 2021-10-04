@@ -4,14 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FilmesAPI.Controllers.Models
+namespace FilmesAPI.Data.Dtos
 {
-    public class Filme
+    public class UpdateFilmeDto
     {
-        [Key]
-        [Required]
-        public int Id { get; set; }
-        [Required(ErrorMessage ="O campo Titulo é obrigatório")]
+        [Required(ErrorMessage = "O campo Titulo é obrigatório")]
         public string Titulo { get; set; }
 
         [Required(ErrorMessage = "O campo Diretor é obrigatório")]
