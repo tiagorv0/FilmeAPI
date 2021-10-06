@@ -22,6 +22,8 @@ namespace FilmesAPI.Data
                 .WithOne(cinema => cinema.Endereco)
                 .HasForeignKey<Cinema>(cinema => cinema.EnderecoId);
 
+            //Na classe Endereco tenho o cinema que possui endereço e tem a chave exterma EnderecoId
+
             builder.Entity<Cinema>()
                 .HasOne(cinema => cinema.Gerente)
                 .WithMany(gerente => gerente.Cinemas)
@@ -30,11 +32,24 @@ namespace FilmesAPI.Data
             //.IsRequired(false); Caso não seja obrigatorio colocar o GerenteId como obrigatorio.
             // No modo cascata, se tentarmos deletar um recurso que é dependência de outro, todos os outros recursos que dependem desse serão excluídos também.
             // No modo restrito não conseguiremos efetuar a deleção.
+
+            builder.Entity<Sessao>()
+                .HasOne(sessao => sessao.Filme)
+                .WithMany(filme => filme.Sessoes)
+                .HasForeignKey(sessao => sessao.FilmeId);
+
+            //Na classe Sessao tenho o Filme que possui várias(WithMany) Sessoes e tem a chave exterma FilmeId
+
+            builder.Entity<Sessao>()
+                .HasOne(sessao => sessao.Cinema)
+                .WithMany(cinema => cinema.Sessoes)
+                .HasForeignKey(sessao => sessao.CinemaId);
         }
 
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Gerente> Gerentes { get; set; }
+        public DbSet<Sessao> Sessoes { get; set; }
     }
 }
