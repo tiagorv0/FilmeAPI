@@ -7,18 +7,13 @@ using System.Threading.Tasks;
 
 namespace FilmesAPI.Models
 {
-    public class Cinema
+    public class Gerente
     {
         [Key]
         [Required]
         public int Id { get; set; }
-        [Required(ErrorMessage ="O campo de nome é obrigatório")]
         public string Nome { get; set; }
-        public virtual Endereco Endereco { get; set; }
-        public int EnderecoId { get; set; }
-        
-        public virtual Gerente Gerente { get; set; }
-        
-        public int GerenteId { get; set; }
+        [JsonIgnore]
+        public virtual List<Cinema> Cinemas { get; set; }
     }
 }

@@ -21,10 +21,20 @@ namespace FilmesAPI.Data
                 .HasOne(endereco => endereco.Cinema)
                 .WithOne(cinema => cinema.Endereco)
                 .HasForeignKey<Cinema>(cinema => cinema.EnderecoId);
+
+            builder.Entity<Cinema>()
+                .HasOne(cinema => cinema.Gerente)
+                .WithMany(gerente => gerente.Cinemas)
+                .HasForeignKey(cinema => cinema.GerenteId);
+            //.OnDelete(DeleteBehavior.Restrict); Caso for deletar, fica restrica caso os dados vinculado a outra classe
+            //.IsRequired(false); Caso não seja obrigatorio colocar o GerenteId como obrigatorio.
+            // No modo cascata, se tentarmos deletar um recurso que é dependência de outro, todos os outros recursos que dependem desse serão excluídos também.
+            // No modo restrito não conseguiremos efetuar a deleção.
         }
 
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Gerente> Gerentes { get; set; }
     }
 }
