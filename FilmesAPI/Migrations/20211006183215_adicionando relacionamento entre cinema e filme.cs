@@ -8,13 +8,6 @@ namespace FilmesAPI.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "ClassificacaoEtaria",
-                table: "Filmes",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
-
             migrationBuilder.CreateTable(
                 name: "Sessoes",
                 columns: table => new
@@ -58,9 +51,7 @@ namespace FilmesAPI.Migrations
             migrationBuilder.DropTable(
                 name: "Sessoes");
 
-            migrationBuilder.DropColumn(
-                name: "ClassificacaoEtaria",
-                table: "Filmes");
+            
         }
     }
 }

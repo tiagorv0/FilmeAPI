@@ -21,8 +21,8 @@ namespace FilmesAPI.Models
 
         [Range(1, 240, ErrorMessage = "A duração deve ter no mínimo 1 e no máximo 240 minutos")]
         public int Duracao { get; set; }
-        [JsonIgnore]
         public int ClassificacaoEtaria { get; set; }
+        [JsonIgnore]
         public virtual List<Sessao> Sessoes { get; set; }
     }
 }

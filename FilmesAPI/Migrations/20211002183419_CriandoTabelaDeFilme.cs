@@ -16,7 +16,8 @@ namespace FilmesAPI.Migrations
                     Titulo = table.Column<string>(type: "text", nullable: false),
                     Diretor = table.Column<string>(type: "text", nullable: false),
                     Genero = table.Column<string>(type: "text", nullable: true),
-                    Duracao = table.Column<int>(type: "int", nullable: false)
+                    Duracao = table.Column<int>(type: "int", nullable: false),
+                    ClassificacaoEtaria = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
