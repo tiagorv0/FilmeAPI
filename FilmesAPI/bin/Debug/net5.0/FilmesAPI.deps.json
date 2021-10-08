@@ -34,6 +34,7 @@
       "FilmesAPI/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
+          "FluentResults": "2.5.0",
           "Microsoft.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.Proxies": "5.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
@@ -391,6 +392,17 @@
         },
         "compile": {
           "lib/netstandard1.5/Castle.Core.dll": {}
+        }
+      },
+      "FluentResults/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.1/FluentResults.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentResults.dll": {}
         }
       },
       "Google.Protobuf/3.14.0": {
@@ -3235,6 +3247,13 @@
       "sha512": "sha512-zanbjWC0Y05gbx4eGXkzVycOQqVOFVeCjVsDSyuao9P4mtN1w3WxxTo193NGC7j3o2u3AJRswaoC6hEbnGACnQ==",
       "path": "castle.core/4.4.1",
       "hashPath": "castle.core.4.4.1.nupkg.sha512"
+    },
+    "FluentResults/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qjPwIRf1f0lHMAWPHQo2SkErIUbisjfNqv8Hem3g0qw7Q000T8cSh8H+/07sviRU63yI5XveBaJM/GrPsI2fNA==",
+      "path": "fluentresults/2.5.0",
+      "hashPath": "fluentresults.2.5.0.nupkg.sha512"
     },
     "Google.Protobuf/3.14.0": {
       "type": "package",

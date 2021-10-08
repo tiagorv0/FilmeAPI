@@ -98,3 +98,4 @@ C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\FilmesAPI\obj\Debug\net5.0\Fi
 C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\FilmesAPI\obj\Debug\net5.0\FilmesAPI.genruntimeconfig.cache
 C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\FilmesAPI\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\FilmesAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\FilmesAPI\bin\Debug\net5.0\FluentResults.dll
