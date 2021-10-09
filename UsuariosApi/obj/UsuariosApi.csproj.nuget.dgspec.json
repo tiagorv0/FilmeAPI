@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\FilmesAPI\\FilmesAPI.csproj": {}
+    "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\UsuariosApi\\UsuariosApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\FilmesAPI\\FilmesAPI.csproj": {
+    "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\UsuariosApi\\UsuariosApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\FilmesAPI\\FilmesAPI.csproj",
-        "projectName": "FilmesAPI",
-        "projectPath": "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\FilmesAPI\\FilmesAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\UsuariosApi\\UsuariosApi.csproj",
+        "projectName": "UsuariosApi",
+        "projectPath": "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\UsuariosApi\\UsuariosApi.csproj",
         "packagesPath": "C:\\Users\\Tiago Vazzoller\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\FilmesAPI\\obj\\",
+        "outputPath": "C:\\Users\\Tiago Vazzoller\\Documents\\GitHub\\FilmeAPI\\UsuariosApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -55,6 +55,14 @@
               "target": "Package",
               "version": "[2.5.0, )"
             },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.10, )"
@@ -69,6 +77,10 @@
               "target": "Package",
               "version": "[5.0.10, )"
             },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            },
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.5, )"
@@ -76,6 +88,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.13.1, )"
             }
           },
           "imports": [
