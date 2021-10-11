@@ -18,7 +18,7 @@ namespace UsuariosApi.Services
             
         }
 
-        internal Result DeslogaUsuario()
+        public Result DeslogaUsuario()
         {
             var resultadoIdentity = _signInManager.SignOutAsync();
             if (resultadoIdentity.IsCompletedSuccessfully) return Result.Ok();

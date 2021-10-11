@@ -33,8 +33,10 @@ namespace UsuariosApi
         {
             services.AddDbContext<UserDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("UsuarioConnection")));
             services
-                .AddIdentity<IdentityUser<int>, IdentityRole<int>>()
-                .AddEntityFrameworkStores<UserDbContext>();
+                .AddIdentity<IdentityUser<int>, IdentityRole<int>>(
+                opt => opt.SignIn.RequireConfirmedEmail = true
+                )
+                .AddEntityFrameworkStores<UserDbContext>().AddDefaultTokenProviders();
             
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -46,6 +48,7 @@ namespace UsuariosApi
             services.AddScoped<LoginService, LoginService>();
             services.AddScoped<TokenService, TokenService>();
             services.AddScoped<LogoutService, LogoutService>();
+            services.AddScoped<EmailService, EmailService>();
             /*Como dito anteriormente, é possível definir quais são os requisitos de uma senha utilizando o Identity.
              *Por padrão, as senhas devem conter um caractere maiúsculo, um minúsculo, um dígito e um caractere não alfanumérico, além de seis caracteres no mínimo.
 
@@ -64,7 +67,9 @@ namespace UsuariosApi
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "UsuariosApi v1"));
+            
             }
 
             app.UseHttpsRedirection();

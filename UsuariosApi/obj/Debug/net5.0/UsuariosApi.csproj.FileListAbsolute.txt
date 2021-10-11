@@ -60,3 +60,6 @@ C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\
 C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\MailKit.dll
+C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\MimeKit.dll
+C:\Users\Tiago Vazzoller\Documents\GitHub\FilmeAPI\UsuariosApi\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
